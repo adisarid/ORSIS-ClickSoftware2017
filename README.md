@@ -42,7 +42,7 @@ Lexicographic order means that each objective becomes relevant only in case of t
 8. In the following example we present a small problem instance with a solution (the solution is not necessarily optimal).  
   1. The input is presented here: http://orsis.net.technion.ac.il/files/2017/01/OC_2017_Challenge_Example.zip.
   2. A solution is presented here: http://orsis.net.technion.ac.il/files/2017/01/OC_2017_Challenge_Example_Solution.zip 
-  * These files are also present in the github repository under "sample_files": https://github.com/adisarid/ORSIS-ClickSoftware2017/sample_files/
+  * These files are also present in the github repository under "sample_files": https://github.com/adisarid/ORSIS-ClickSoftware2017
   * The solution consists of three columns: resource ID, task ID, and start time.
 
 ## Participation rules
