@@ -28,6 +28,8 @@ COS((Destination_Long - Origin_Long) * 3.14159265358979 / 180.0)) * 6371
 ```
 * Assume that all resources drive at an average speed of 50 km/h. 
 
+### Objective function
+
 7. There are four objectives, lexicographically ordered by their importance:
   1. The main objective is to maximize the number of tasks scheduled within their feasible earliest and latest start time. 
   2. The secondary objective is to minimize the total travel time.
@@ -35,13 +37,13 @@ COS((Destination_Long - Origin_Long) * 3.14159265358979 / 180.0)) * 6371
   4. Finally, the fourth objective is to minimize the difference between the longest and shortest shifts among all resources, for the sake of fairness. 
 Lexicographic order means that each objective becomes relevant only in case of ties in all more important objectives.  
 
+### Example
+
 8. In the following example we present a small problem instance with a solution (the solution is not necessarily optimal).  
   1. The input is presented here: http://orsis.net.technion.ac.il/files/2017/01/OC_2017_Challenge_Example.zip.
   2. A solution is presented here: http://orsis.net.technion.ac.il/files/2017/01/OC_2017_Challenge_Example_Solution.zip 
   * These files are also present in the github repository under "sample_files": https://github.com/adisarid/ORSIS-ClickSoftware2017/sample_files/
   * The solution consists of three columns: resource ID, task ID, and start time.
-
-
 
 ## Participation rules
 
