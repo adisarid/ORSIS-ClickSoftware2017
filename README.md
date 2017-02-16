@@ -18,16 +18,17 @@ The first part of this document states the challenge problem and the second prov
 5. The file Skills.csv defines the skills that each resource has, providing resource ID and skill ID. Each resource can have more than one skill.
 
 6. Distances should be calculated based on aerial calculations:
-      Input: Origin_Lat, Origin_Long, Destination_Lat, Destination_Long.
-      Output: Distance (km)
-      Distance = 
+Input: Origin_Lat, Origin_Long, Destination_Lat, Destination_Long.
+Output: Distance (km)
+```
+Distance = 
 ACOS(SIN(Origin_Lat * 3.14159265358979 / 180.0) * SIN(Destination_Lat * 3.14159265358979 / 180.0) + 
 COS(Origin_Lat * 3.14159265358979 / 180.0) * COS(Destination_Lat * 3.14159265358979 / 180.0) * 
-   COS((Destination_Long - Origin_Long) * 3.14159265358979 / 180.0)) * 6371
+COS((Destination_Long - Origin_Long) * 3.14159265358979 / 180.0)) * 6371
+```
+* Assume that all resources drive at an average speed of 50 km/h. 
 
-Assume that all resources drive at an average speed of 50 km/h. 
-
-7. There are four objectives, lexicographically ordered by their importance: 
+7. There are four objectives, lexicographically ordered by their importance:
 --1. The main objective is to maximize the number of tasks scheduled within their feasible earliest and latest start time. 
 --2. The secondary objective is to minimize the total travel time.
 --3. The third objective is to maximize the number of tasks scheduled in their safe time. Safe time is defined from the earliest start time up to 30 minutes before the latest start time (in order to minimize the risk of showing up late due to traffic jams and other considerations).
@@ -47,8 +48,8 @@ Lexicographic order means that each objective becomes relevant only in case of t
 ### Participation 
 The Operations Research community is invited to take part in this challenge. Participation is allowed for teams of (one or) several members. 
 Not allowed to participate:  
---1. ORSIS president, ORSIS representatives in the prize committee and students under their supervision. 
---2. ClickSoftware employees. 
+1. ORSIS president, ORSIS representatives in the prize committee and students under their supervision. 
+2. ClickSoftware employees. 
 
 ### Registration 
 1. The OC challenge registration will be possible in this form (http://sgiz.mobi/s3/b952399c7a73), also available in the website http://orsis.net.technion.ac.il/orsis-challenge/2017-2/. 
@@ -57,11 +58,10 @@ Not allowed to participate:
 ### Solution submission: 
 1. Solutions must be submitted as a csv file in the format described above by Sunday, May 7th, noon (Israel time), to oc.challenge2017@gmail.com with the subject “Solution - <Team name>”.  
 2. The solution file name should be the <team_name>.csv. Each solution will be accompanied by 2-4-page summary of the algorithm/method. 
-3. A Python script that validates the solution will be made available in the competition web-site. The teams are asked to use it to check their solutions before submitting. 
+3. A Python script that validates the solution will be made available in the competition web-site. The teams are asked to use it to check their solutions before submitting.
 4. Upon submission, at least one member of the team must be an ORSIS member. 
 
 ### Additional conditions:
-
 1. The names, solutions and reports of the leading teams will be published in the competition and in ORSIS web-sites.  
 2. The winning teams will be required to present their accomplishment in a dedicated session in the 2017 annual ORSIS meeting on May 21st -22nd , at Bar-Ilan University (http://orsis.net.technion.ac.il/2016/08/24/coming-conf/). 
 3. The prizes will be awarded on this occasion. 
