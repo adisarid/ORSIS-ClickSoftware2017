@@ -88,5 +88,8 @@ ENV/
 # Rope project settings
 .ropeproject
 
-# hidden directory
+# hidden directory and hidden files
 hidden_files
+challenge_instance/Resources.csv
+challenge_instance/Resources_Skills.csv
+challenge_instance/Tasks.csv
