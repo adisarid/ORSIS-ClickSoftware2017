@@ -31,8 +31,11 @@ def calc_distance(Origin, Destination):
     distance = acos(sin(Origin_Lat * 3.14159265358979 / 180.0) * sin(Destination_Lat * 3.14159265358979 / 180.0) + \
     cos(Origin_Lat * 3.14159265358979 / 180.0) * cos(Destination_Lat * 3.14159265358979 / 180.0) * \
     cos((Destination_Long - Origin_Long) * 3.14159265358979 / 180.0)) * 6371
-    distance = round(distance,0) # round to nearest whole number
     return(distance)
+
+def calc_drive_time(Origin, Destination, velocity = 50):
+    dist = max(1, round(calc_distance(Origin, Destination)/velocity, 0))
+    return(dist)
 
 def read_into_dict(filename, skipcols = []):
     '''
