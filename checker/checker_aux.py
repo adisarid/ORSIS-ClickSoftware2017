@@ -34,7 +34,7 @@ def calc_distance(Origin, Destination):
     return(distance)
 
 def calc_drive_time(Origin, Destination, velocity = 50):
-    dist = max(1, round(calc_distance(Origin, Destination)/velocity, 0))
+    dist = max(1, round(calc_distance(Origin, Destination)/velocity, 0)) # at least a minute and rounded to the nearest integer
     return(dist)
 
 def read_into_dict(filename, skipcols = []):
