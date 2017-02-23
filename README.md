@@ -1,4 +1,4 @@
-# ORSIS-ClickSoftware2017
+﻿# ORSIS-ClickSoftware2017
 The ORSIS-ClickSoftware2017 optimization challenge, see: 
 http://orsis.net.technion.ac.il/orsis-challenge/2017-2/
 
@@ -35,7 +35,8 @@ COS((Destination_Long - Origin_Long) * 3.14159265358979 / 180.0)) * 6371
   2. The secondary objective is to minimize the total travel time.
   3. The third objective is to maximize the number of tasks scheduled in their safe time. Safe time is defined from the earliest start time up to 30 minutes before the latest start time (in order to minimize the risk of showing up late due to traffic jams and other considerations).
   4. Finally, the fourth objective is to minimize the difference between the longest and shortest shifts among all resources, for the sake of fairness. 
-Lexicographic order means that each objective becomes relevant only in case of ties in all more important objectives.  
+
+* Lexicographic order means that each objective becomes relevant only in case of ties in all more important objectives.  
 
 ### Example
 
