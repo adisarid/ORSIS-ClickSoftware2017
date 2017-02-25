@@ -93,3 +93,6 @@ hidden_files
 challenge_instance/Resources.csv
 challenge_instance/Resources_Skills.csv
 challenge_instance/Tasks.csv
+challenge_instance/Resources_v2.csv
+challenge_instance/Resources_Skills_v2.csv
+challenge_instance/Tasks_v2.csv
