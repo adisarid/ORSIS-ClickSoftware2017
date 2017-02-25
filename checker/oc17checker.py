@@ -98,13 +98,16 @@ for cur_res in res_used:
         # make sure travel time + duration is ok VIOLATION TYPE 1
         if (drive_time + treat_duration + last_step[2]) > next_step[2]:
             violations += [[cur_res, last_step[1], 1]]
+            print 'Violation found. Resource:', cur_res, 'Task', last_step[1], 'Last stop start + treatment + drive time = ', str(drive_time + treat_duration + last_step[2]), ', but next start time = ', str(next_step[2])
         # make sure task starts within time window VIOLATION TYPE 2
         if (next_step[2] < tsk_dat[next_step[1]][4] or next_step[2] > tsk_dat[next_step[1]][5]):
             violations += [[cur_res, next_step[1], 2]]
+            print 'Violation found. Resource:', cur_res, 'Task', next_step[1], 'not within window. Start=', next_step[2], 'Window=[', tsk_dat[next_step[1]][4], tsk_dat[next_step[1]][5] , ']'
         # check skill (make sure task can be treated by current resource) VIOLATION TYPE 3
         # (i.e., is the skill required for the current task is indeed in the resource's skill list)
         if not (tsk_dat[next_step[1]][0] in skl_dat[cur_res]):
             violations += [[cur_res, next_step[1], 3]]
+            print 'Violation found. Resource:', cur_res, 'Task', next_step[1], 'not within skill. Task requires=', tsk_dat[next_step[1]][0], 'Resource skills', skl_dat[cur_res]
         # check if should be counted within safe time (at least 30 min before latest start time) - not mandatory, but for objective
         if (next_step[2] < tsk_dat[next_step[1]][5]-30):
             tasks_safe_zone += 1
