@@ -5,17 +5,26 @@ http://orsis.net.technion.ac.il/orsis-challenge/2017-2/
 The 2017 OC challenge is a cooperation between ORSIS and ClickSoftware, designed to strengthen ties between industry and academia in the field of Operations Research. It is an opportunity to expose students and researchers to practical problems, and for ClickSoftware to be involved with the research community. This is the second year that ORSIS is presenting a challenge with a leading company. 
 The first part of this document states the challenge problem and the second provides instructions for participants.
 
+## UPDATES 26/02/2017
+1. Added instructions on rounding drive times, and tasks duration.
+2. Updated instance files - omitted tasks which no resource can handle and resources which cannot handle any task.
+3. Solution file format slightly modified. You should provide times in integers.
+* See this file for detailed instructions regarding these three.
+
 ## Problem definition
 
 1. The OC challenge problem is to propose an efficient schedule of mobile resources (e.g., engineers) to perform maintenance tasks over a large geographical area, as can be seen below. 
 
-2. The file Tasks.csv defines 1546 tasks, providing task ID, required (resource) skill ID, geographical location, earliest and latest start time (all during the same day), and nominal task duration. The last two columns (added 13/2/17) are the earliest and latest start times, counted in minutes from midnight (e.g., 08:00 = 480). In this sense they are equivalent to the earliest and latest start time, but are easier to "work with". Each task requires one skill. 
+2. The file Tasks_v2.csv defines 1,483 tasks, providing task ID, required (resource) skill ID, geographical location, earliest and latest start time (all during the same day), and nominal task duration. The last two columns (added 13/2/17) are the earliest and latest start times, counted in minutes from midnight (e.g., 08:00 = 480). In this sense they are equivalent to the earliest and latest start time, but are easier to "work with". Each task requires one skill. 
 
-3. The file Resources.csv defines 242 resources, providing resource ID, geographical location of the resource, and resource efficiency. The nominal duration of the task will be divided by the efficiency to determine actual assignment’s duration (e.g., efficiency 2.0 means all tasks assigned to this resource will take half of their nominal time). The resources should start and finish work at their location. The start working time of all resources is 8:00 am and the end working time is 5:00 pm (i.e., shifts’ duration is 9 hours for all resources). 
-
+3. The file Resources_v2.csv defines 216 resources, providing resource ID, geographical location of the resource, and resource efficiency. The nominal duration of the task will be divided by the efficiency to determine actual assignment’s duration (e.g., efficiency 2.0 means all tasks assigned to this resource will take half of their nominal time). The resources should start and finish work at their location. The start working time of all resources is 8:00 am and the end working time is 5:00 pm (i.e., shifts’ duration is 9 hours for all resources). When you compute the duration of a task, you should round the duration to the maximum between 1 and the closest minute. I.e.:
+```
+max(1, 
+    round(nominal duration/efficiency, 0))
+```
 4. A resource is able to start travel only from the beginning of his shift and must finish travel by the end of his shift (i.e., travel not before 8:00 am and not after 5:00 pm).
 
-5. The file Skills.csv defines the skills that each resource has, providing resource ID and skill ID. Each resource can have more than one skill.
+5. The file Resources_Skills_v2.csv defines the skills that each resource has, providing resource ID and skill ID. Each resource can have more than one skill.
 
 6. Distances should be calculated based on aerial calculations:
 Input: Origin_Lat, Origin_Long, Destination_Lat, Destination_Long.
@@ -26,7 +35,7 @@ ACOS(SIN(Origin_Lat * 3.14159265358979 / 180.0) * SIN(Destination_Lat * 3.141592
 COS(Origin_Lat * 3.14159265358979 / 180.0) * COS(Destination_Lat * 3.14159265358979 / 180.0) * 
 COS((Destination_Long - Origin_Long) * 3.14159265358979 / 180.0)) * 6371
 ```
-* Assume that all resources drive at an average speed of 50 km/h. 
+* Assume that all resources drive at an average speed of 50 km/h. When you compute the travel time, you should round the travel time to the maximum between 1 and the closest minute.
 
 ### Objective function
 
@@ -59,10 +68,12 @@ Not allowed to participate:
 2. Each team must register to the challenge to get access to the input data. Upon registration, each team should provide a team name, the names and affiliation of the members and one e-mail address for correspondence. 
 
 ### Solution submission: 
-1. Solutions must be submitted as a csv file in the format described above by Sunday, May 7th, noon (Israel time), to oc.challenge2017@gmail.com with the subject “Solution - <Team name>”.  
-2. The solution file name should be the <team_name>.csv. Each solution will be accompanied by 2-4-page summary of the algorithm/method. 
-3. A Python script that validates the solution will be made available in the competition web-site. The teams are asked to use it to check their solutions before submitting.
-4. Upon submission, at least one member of the team must be an ORSIS member. 
+1. Solutions must be submitted as a csv file in the format described above by Sunday, May 7th, noon (Israel time), to oc.challenge2017@gmail.com with the subject “Solution - <Team name>”. 
+2. Solution file format should contain the following columns: Resource_ID, Task_ID, and Start_time (integer in minutes from midnight). The sample file has an additional column called "Finish_time" which is optional.
+3. Rounding: as stated above, when computing the drive time and the duration of a task, you should round up to the maximum between 1 minute and the closest minute, so that start times are all integers.
+4. The solution file name should be the <team_name>.csv. Each solution will be accompanied by 2-4-page summary of the algorithm/method. 
+5. A Python script that validates the solution will be made available in the competition web-site. The teams are asked to use it to check their solutions before submitting.
+6. Upon submission, at least one member of the team must be an ORSIS member. 
 
 ### Additional conditions:
 1. The names, solutions and reports of the leading teams will be published in the competition and in ORSIS web-sites.  
