@@ -23,7 +23,7 @@
 # if a single argument is given it asumes that the argument is the directory and uses these file names in the directory
 # if more than one argument is given, it assumes that the first argument is dir and the rest are file names (must all appear)
 # Here is the order of arguments for example, when reading the example files:
-# "c:\Users\Adi Sarid\Documents\GitHub\ORSIS-ClickSoftware\sample_files\" "example_solution v2.csv" "Example_Resources.csv" "Example_Resources_Skills.csv" "Example_Tasks.csv"
+# "..\sample_files\" "example_solution_v2.csv" "Example_Resources.csv" "Example_Resources_Skills.csv" "Example_Tasks.csv"
 
 # load required packages
 from checker_aux import * # import auxiliary files from checker_aux file.
@@ -42,11 +42,11 @@ if len(sys.argv) == 1: #only the script no arguments given
 elif len(sys.argv) == 2:
     curdir = sys.argv[1]
 elif len(sys.argv) < 6:
-    print"Not enough arguments specified.\nScript can run on:"
+    print "Not enough arguments specified. I have", len(sys.argv), "arguments. \nScript can run on:"
     print "0 arguments (assumes current dir);"
     print "1 argument (file location, default names assumed);"
     print "2 arguments (directory + solution file name + the rest are default names);"
-    print "nor 5 arguments (directory + all files' names)."
+    print "or 5 arguments (directory + all files' names)."
 else:
     curdir = sys.argv[1]
     sol_filename = sys.argv[2]
@@ -55,6 +55,11 @@ else:
     tsk_filename = sys.argv[5]
 
 # read instance
+print 'reading solution from:', curdir+sol_filename
+print 'reading resource from:', curdir+res_filename
+print 'reading skills from:', curdir+skl_filename
+print 'reading tasks from:', curdir+tsk_filename
+
 sol_dat = read_sol_into_list(curdir + sol_filename)
 res_dat = read_into_dict(curdir + res_filename)
 skl_dat = read_into_dict(curdir + skl_filename)
