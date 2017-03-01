@@ -18,23 +18,23 @@ The first part of this document states the challenge problem and the second prov
 2. The file Tasks_v2.csv defines 1,483 tasks, providing task ID, required (resource) skill ID, geographical location, earliest and latest start time (all during the same day), and nominal task duration. The last two columns (added 13/2/17) are the earliest and latest start times, counted in minutes from midnight (e.g., 08:00 = 480). In this sense they are equivalent to the earliest and latest start time, but are easier to "work with". Each task requires one skill. 
 
 3. The file Resources_v2.csv defines 216 resources, providing resource ID, geographical location of the resource, and resource efficiency. The nominal duration of the task will be divided by the efficiency to determine actual assignment’s duration (e.g., efficiency 2.0 means all tasks assigned to this resource will take half of their nominal time). The resources should start and finish work at their location. The start working time of all resources is 8:00 am and the end working time is 5:00 pm (i.e., shifts’ duration is 9 hours for all resources). When you compute the duration of a task, you should round the duration to the maximum between 1 and the closest minute. I.e.:
-```
-max(1, 
-    round(nominal duration/efficiency, 0))
-```
+    ```
+    max(1, 
+        round(nominal duration/efficiency, 0))
+    ```
 4. A resource is able to start travel only from the beginning of his shift and must finish travel by the end of his shift (i.e., travel not before 8:00 am and not after 5:00 pm).
 
 5. The file Resources_Skills_v2.csv defines the skills that each resource has, providing resource ID and skill ID. Each resource can have more than one skill.
 
 6. Distances should be calculated based on aerial calculations:
-Input: Origin_Lat, Origin_Long, Destination_Lat, Destination_Long.
-Output: Distance (km)
-```
-Distance = 
-ACOS(SIN(Origin_Lat * 3.14159265358979 / 180.0) * SIN(Destination_Lat * 3.14159265358979 / 180.0) + 
-COS(Origin_Lat * 3.14159265358979 / 180.0) * COS(Destination_Lat * 3.14159265358979 / 180.0) * 
-COS((Destination_Long - Origin_Long) * 3.14159265358979 / 180.0)) * 6371
-```
+   Input: Origin_Lat, Origin_Long, Destination_Lat, Destination_Long.
+   Output: Distance (km)
+    ```
+    Distance = 
+    ACOS(SIN(Origin_Lat * 3.14159265358979 / 180.0) * SIN(Destination_Lat * 3.14159265358979 / 180.0) + 
+    COS(Origin_Lat * 3.14159265358979 / 180.0) * COS(Destination_Lat * 3.14159265358979 / 180.0) * 
+    COS((Destination_Long - Origin_Long) * 3.14159265358979 / 180.0)) * 6371
+    ```
 * Assume that all resources drive at an average speed of 50 km/h. When you compute the travel time, you should round the travel time to the maximum between 1 and the closest minute.
 
 ### Objective function
