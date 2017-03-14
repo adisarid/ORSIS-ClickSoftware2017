@@ -23,17 +23,21 @@ def calc_distance(Origin, Destination):
     Assumes first argument is Origin = [Lat, Lon],
     Second argument           Destination = [Lat, Lon]
     '''
-    Origin_Lat = Origin[0]
-    Origin_Long = Origin[1]
-    Destination_Lat = Destination[0]
-    Destination_Long = Destination[1]
+    
+    if Origin == Destination:
+        return(0)
+    else:
+        Origin_Lat = Origin[0]
+        Origin_Long = Origin[1]
+        Destination_Lat = Destination[0]
+        Destination_Long = Destination[1]
+    
+        distance = acos(sin(Origin_Lat * 3.14159265358979 / 180.0) * sin(Destination_Lat * 3.14159265358979 / 180.0) + \
+        cos(Origin_Lat * 3.14159265358979 / 180.0) * cos(Destination_Lat * 3.14159265358979 / 180.0) * \
+        cos((Destination_Long - Origin_Long) * 3.14159265358979 / 180.0)) * 6371
+        return(distance)
 
-    distance = acos(sin(Origin_Lat * 3.14159265358979 / 180.0) * sin(Destination_Lat * 3.14159265358979 / 180.0) + \
-    cos(Origin_Lat * 3.14159265358979 / 180.0) * cos(Destination_Lat * 3.14159265358979 / 180.0) * \
-    cos((Destination_Long - Origin_Long) * 3.14159265358979 / 180.0)) * 6371
-    return(distance)
-
-def calc_drive_time(Origin, Destination, velocity = 50):
+def calc_drive_time(Origin, Destination, velocity = 50/60.0):
     dist = max(1, round(calc_distance(Origin, Destination)/velocity, 0)) # at least a minute and rounded to the nearest integer
     return(dist)
 
