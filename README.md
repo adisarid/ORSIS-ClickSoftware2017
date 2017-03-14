@@ -8,7 +8,9 @@ The first part of this document states the challenge problem and the second prov
 ## UPDATES 14/03/2017
 1. Bug fix in oc17checker.py relating to file input
 2. Two bugs fixed in checker_aux.py relating to distance and travel distance computation.
-* Be sure to use the updated checker.
+
+* Be sure to use the updated checker. 
+* The contribution by a competitor (pointing these bugs out) is much appreciated!
 
 ## UPDATES 26/02/2017
 1. Added instructions on rounding drive times, and tasks duration.
