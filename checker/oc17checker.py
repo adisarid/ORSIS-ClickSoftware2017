@@ -38,7 +38,7 @@ skl_filename = 'Resources_Skills_v2.csv'
 tsk_filename = 'Tasks_v2.csv'
 
 if len(sys.argv) == 1: #only the script no arguments given
-    curdir = os.getcwd()
+    curdir = os.getcwd() + "\\"
 elif len(sys.argv) == 2:
     curdir = sys.argv[1]
 elif len(sys.argv) < 6:
