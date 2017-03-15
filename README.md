@@ -5,6 +5,9 @@ http://orsis.net.technion.ac.il/orsis-challenge/2017-2/
 The 2017 OC challenge is a cooperation between ORSIS and ClickSoftware, designed to strengthen ties between industry and academia in the field of Operations Research. It is an opportunity to expose students and researchers to practical problems, and for ClickSoftware to be involved with the research community. This is the second year that ORSIS is presenting a challenge with a leading company. 
 The first part of this document states the challenge problem and the second provides instructions for participants.
 
+## UPDATES 15/03/2017
+* Small note on rounding. Different programming languages resolve ties differently (e.g. 62.5 can be rounded to 62 or 63. See [rounding](https://en.wikipedia.org/wiki/Rounding) under 3.1 "tie breaking"). For consistancy, when you are rounding and have to **break ties** (exactly at half) make sure you round up. In the example above, 62.49 and down is rounded to 62, but 62.5 and up will be rounded to 63. 
+
 ## UPDATES 14/03/2017
 1. Bug fix in oc17checker.py relating to file input
 2. Two bugs fixed in checker_aux.py relating to distance and travel distance computation.
