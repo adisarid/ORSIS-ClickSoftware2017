@@ -5,17 +5,12 @@ http://orsis.net.technion.ac.il/orsis-challenge/2017-2/
 The 2017 OC challenge is a cooperation between ORSIS and ClickSoftware, designed to strengthen ties between industry and academia in the field of Operations Research. It is an opportunity to expose students and researchers to practical problems, and for ClickSoftware to be involved with the research community. This is the second year that ORSIS is presenting a challenge with a leading company. 
 The first part of this document states the challenge problem and the second provides instructions for participants.
 
-## UPDATES 14/03/2017
+## UPDATES 22/03/2017
 1. Bug fix in oc17checker.py relating to file input
-2. Two bugs fixed in checker_aux.py relating to distance and travel distance computation.
-
-* Be sure to use the updated checker. 
-* The contribution by a competitor (pointing these bugs out) is much appreciated!
-
-## UPDATES 26/02/2017
-1. Added instructions on rounding drive times, and tasks duration.
-2. Updated instance files - omitted tasks which no resource can handle and resources which cannot handle any task.
-3. Solution file format slightly modified. You should provide times in integers.
+2. Two bugs fixed in checker_aux.py relating to distance and travel distance computation. Be sure to use the updated checker. The contribution by a competitor (pointing these bugs out) is much appreciated!
+3. Added instructions on rounding drive times, and tasks duration.
+4. Updated instance files - omitted tasks which no resource can handle and resources which cannot handle any task.
+5. Solution file format slightly modified. You should provide times in integers.
 * See this file for detailed instructions regarding these three.
 
 ## Problem definition
