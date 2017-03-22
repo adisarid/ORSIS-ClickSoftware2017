@@ -8,7 +8,7 @@ The first part of this document states the challenge problem and the second prov
 ## UPDATES 22/03/2017
 1. Small note on rounding. Different programming languages resolve ties differently (e.g. 62.5 can be rounded to 62 or 63. See [rounding](https://en.wikipedia.org/wiki/Rounding) under 3.1 "tie breaking"). For consistancy, when you are rounding and have to **break ties** (exactly at half) make sure you round up. In the example above, 62.49 and down is rounded to 62, but 62.5 and up will be rounded to 63. 
 2. Bug fix in oc17checker.py relating to file input
-3. Two bugs fixed in checker_aux.py relating to distance and travel distance computation. Be sure to use the updated checker. The contribution by a competitor (pointing these bugs out) is much appreciated!
+3. Two bugs fixed in checker_aux.py relating to distance and travel distance computation. Be sure to use the updated checker.
 4. Added instructions on rounding drive times, and tasks duration.
 5. Updated instance files - omitted tasks which no resource can handle and resources which cannot handle any task.
 6. Solution file format slightly modified. You should provide times in integers.
@@ -52,10 +52,7 @@ The first part of this document states the challenge problem and the second prov
 
 ### Example
 
-8. In the following example we present a small problem instance with a solution (the solution is not necessarily optimal).  
-  1. The input is presented here: http://orsis.net.technion.ac.il/files/2017/01/OC_2017_Challenge_Example.zip.
-  2. A solution is presented here: http://orsis.net.technion.ac.il/files/2017/01/OC_2017_Challenge_Example_Solution.zip 
-  * These files are also present in the github repository under "sample_files": https://github.com/adisarid/ORSIS-ClickSoftware2017
+8. In the following example we present a small problem instance with a solution (the solution is not necessarily optimal).  See directory [sample files](https://github.com/adisarid/ORSIS-ClickSoftware2017/tree/master/sample_files) in this github repository.
   * The solution consists of three columns: resource ID, task ID, and start time.
 
 ## Participation rules
