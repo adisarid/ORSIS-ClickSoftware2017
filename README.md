@@ -6,11 +6,12 @@ The 2017 OC challenge is a cooperation between ORSIS and ClickSoftware, designed
 The first part of this document states the challenge problem and the second provides instructions for participants.
 
 ## UPDATES 22/03/2017
-1. Bug fix in oc17checker.py relating to file input
-2. Two bugs fixed in checker_aux.py relating to distance and travel distance computation. Be sure to use the updated checker. The contribution by a competitor (pointing these bugs out) is much appreciated!
-3. Added instructions on rounding drive times, and tasks duration.
-4. Updated instance files - omitted tasks which no resource can handle and resources which cannot handle any task.
-5. Solution file format slightly modified. You should provide times in integers.
+1. Small note on rounding. Different programming languages resolve ties differently (e.g. 62.5 can be rounded to 62 or 63. See [rounding](https://en.wikipedia.org/wiki/Rounding) under 3.1 "tie breaking"). For consistancy, when you are rounding and have to **break ties** (exactly at half) make sure you round up. In the example above, 62.49 and down is rounded to 62, but 62.5 and up will be rounded to 63. 
+2. Bug fix in oc17checker.py relating to file input
+3. Two bugs fixed in checker_aux.py relating to distance and travel distance computation. Be sure to use the updated checker. The contribution by a competitor (pointing these bugs out) is much appreciated!
+4. Added instructions on rounding drive times, and tasks duration.
+5. Updated instance files - omitted tasks which no resource can handle and resources which cannot handle any task.
+6. Solution file format slightly modified. You should provide times in integers.
 * See this file for detailed instructions regarding these three.
 
 ## Problem definition
