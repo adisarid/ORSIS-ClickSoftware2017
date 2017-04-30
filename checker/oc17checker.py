@@ -71,6 +71,9 @@ shift_start = 8*60.0
 shift_end = 17*60.0
 # init objective functions' values:
 tasks_scheduled = list(set([r[1] for r in sol_dat])) # tasks allegedly fulfilled (before checking for violations), using "set" for unique values
+if len(tasks_scheduled) != len(sol_dat):
+    print 'WARNING: You are traversing some tasks more than once (omitting redundance, counting as unique).'
+
 tot_travel_time = 0
 tasks_safe_zone = 0
 shift_end = dict() # going to hold data per resource and later compute the fairness objective
